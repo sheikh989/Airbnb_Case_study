@@ -1,4 +1,4 @@
-streamlit
-numpy
-pandas
+streamlit==1.29.0
 pickle
+pandas
+scikit-learn
