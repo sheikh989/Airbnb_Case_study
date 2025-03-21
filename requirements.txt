@@ -1,4 +1,4 @@
 streamlit==1.29.0
-pickle
-pandas
-scikit-learn
+pandas==1.5.1
+pickle5==0.0.11
+
