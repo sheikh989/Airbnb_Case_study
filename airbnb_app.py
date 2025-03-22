@@ -1,33 +1,55 @@
 import streamlit as st
 import pickle
 import pandas as pd
+import os
 
+
+cwd=os.getcwd()
 
 st.markdown("<h1 style=color:blue;>Welcome to the Airbnb Price Prediction</h1>", unsafe_allow_html=True)
 
-file = open("airbnb_model.pkl", 'rb')
-model = pickle.load(file)
 
-file_s= open("scaler_airbnb_right.pkl", 'rb')
-scl = pickle.load(file_s)
 
-city= open("city_labeling.pkl", 'rb')
-city_labeling = pickle.load(city)
 
-zip= open("zip_labeling.pkl", 'rb')
-zip_labeling = pickle.load(zip)
+model_path = os.path.join(cwd,"airbnb_model.pkl")
+with open(model_path, 'rb') as file:
+    model = pickle.load(file)
+# model = pickle.load(model)
 
-pt= open("pt_labeling.pkl", 'rb')
-pt_labeling = pickle.load(pt)
+file_s= os.path.join(cwd,"scaler_airbnb_right.pkl")
+with open(file_s, 'rb') as file2:
+    scl = pickle.load(file2)
+# scl = pickle.load(file_s)
 
-rt= open("rt_labeling.pkl", 'rb')
-rt_labeling = pickle.load(rt)
+city= os.path.join(cwd,"city_labeling.pkl")
+with open(city, 'rb') as file3:
+    city_labeling = pickle.load(file3)
+# city_labeling = pickle.load(city)
 
-lg= open("lg_labeling.pkl", 'rb')
-lg_labeling = pickle.load(lg)
+zip= os.path.join(cwd,"zip_labeling.pkl")
+with open(zip, 'rb') as file4:
+    zip_labeling = pickle.load(file4)
+# zip_labeling = pickle.load(zip)
 
-bt= open("bt_labeling.pkl", 'rb')
-bt_labeling = pickle.load(bt)
+pt= os.path.join(cwd,"pt_labeling.pkl")
+with open(pt, 'rb') as file4:
+    pt_labeling = pickle.load(file4)
+# pt_labeling = pickle.load(pt)
+
+rt= os.path.join(cwd,"rt_labeling.pkl")
+with open(rt, 'rb') as file5:
+    rt_labeling = pickle.load(file5)
+# rt_labeling = pickle.load(rt)
+
+lg= os.path.join(cwd,"lg_labeling.pkl")
+with open(lg, 'rb') as file6:
+    lg_labeling = pickle.load(file6)
+# lg_labeling = pickle.load(lg)
+
+bt= os.path.join(cwd,"bt_labeling.pkl")
+with open(bt, 'rb') as file7:
+    bt_labeling = pickle.load(file7)
+# bt_labeling = pickle.load(bt)
 
 
 city = st.selectbox("Select City",
